@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>动画</title>
+    <style type="text/css">
+    .binge{
+        font-size: 0.5rem;
+        font-family: "Microsoft Yahei";
+    }
+    .bird {
+        min-width: 91px;
+        min-height: 71px;
+        top: 50%;
+        left:50%;
+        position: absolute;
+        z-index: 10;
+        background: url(http://img.mukewang.com/55ade1700001b38302730071.png)
+    }
+    
+    .birdFly {
+        animation-name: bird-slow;
+        animation-duration: 400ms;
+        animation-timing-function: steps(3);
+        animation-iteration-count: infinite;
+    }
+   
+    @keyframes bird-slow {
+        0% {
+            background-color: red;
+            background-position: -0px 0px;
+        }
+        100% {
+            background-color: blue;
+            background-position: 273px 0px;
+        }
+    }
+    
+    
+    
+    /*???*/
+
+    </style>
+</head>
+
+<body class="binge">
+    斌哥加油！哈哈，有问题一起扛~
+    <div class="bird birdFly"></div>
+</body>
+<script type="text/javascript">
+var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function() {
+        //设置根字体大小
+        docEl.style.fontSize = 20 * (docEl.clientWidth / 320) + 'px';
+    };
+
+//绑定浏览器缩放与加载时间
+window.addEventListener(resizeEvt, recalc, false);
+document.addEventListener('DOMContentLoaded', recalc, false);
+</script>
+
+</html>
